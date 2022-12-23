@@ -6,6 +6,7 @@
 }
 nav {
   background-color: #7e4d9e;
+  color: #fff;
 }
 body {
   background: linear-gradient(#ffa4ae, #7e4d9e);
@@ -46,6 +47,9 @@ img {
 .featureImage {
   border-radius: 3em;
   max-width: 40%;
+}
+.weatherApp {
+  padding-block: 300px;
 }
 button {
   display: block;
