@@ -48,8 +48,13 @@ img {
   border-radius: 3em;
   max-width: 40%;
 }
-.weatherApp {
-  padding-block: 300px;
+.weatherAppContainer {
+  max-width: 90%;
+  margin: 0 auto;
+  padding-block: 20px;
+}
+.border {
+  border: var(--bs-border-width) var(--bs-border-style) #ffa4ae !important;
 }
 button {
   display: block;
