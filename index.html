@@ -74,14 +74,58 @@
       <hr />
       <div class="container-fluid weatherAppContainer">
         <div class="row">
-          <div class="col-sm-7 border border-2 rounded-3">MAIN WEATHER</div>
+          <div class="col-sm-7 border border-2 rounded-3">
+            <form class="city-search-form" id="city-search-form">
+              <input type="text" placeholder="City" id="search-input" />
+              <button type="submit" id="search-btn">Search</button>
+            </form>
+            <div class="current-temp row align-items-center">
+              <div class="col-md-3 text-center weather-icon" id="weather-icon">
+                🌞
+              </div>
+              <div class="col-md">
+                <span class="current-temp" id="current-temp">8°C</span> in
+                Leominster, GB
+              </div>
+            </div>
+            <div class="weather-img"></div>
+            <div class="skating-weather-text" id="skating-text">
+              Currently good weather for skating outdoors!
+            </div>
+          </div>
+
           <div class="col-sm-5">
             <div class="row">
-              <div class="col-md-12 border border-2 rounded-3">MON</div>
-              <div class="col-md-12 border border-2 rounded-3">TUES</div>
-              <div class="col-md-12 border border-2 rounded-3">WEDS</div>
-              <div class="col-md-12 border border-2 rounded-3">THURS</div>
-              <div class="col-md-12 border border-2 rounded-3">FRI</div>
+              <div class="col-md-12 border border-2 rounded-3">
+                <div class="text-center weather-icon-sm">
+                  <span class="current-day-1">Mon</span> 🌞
+                  <span id="current-temp-1">8°C</span>
+                </div>
+              </div>
+              <div class="col-md-12 border border-2 rounded-3">
+                <div class="text-center weather-icon-sm">
+                  <span class="current-day-2">Tues</span> 🌞
+                  <span id="current-temp-2">8°C</span>
+                </div>
+              </div>
+              <div class="col-md-12 border border-2 rounded-3">
+                <div class="text-center weather-icon-sm">
+                  <span class="current-day-3">Weds</span> 🌞
+                  <span id="current-temp-3">8°C</span>
+                </div>
+              </div>
+              <div class="col-md-12 border border-2 rounded-3">
+                <div class="text-center weather-icon-sm">
+                  <span class="current-day-4">Thurs</span> 🌞
+                  <span id="current-temp-4">8°C</span>
+                </div>
+              </div>
+              <div class="col-md-12 border border-2 rounded-3">
+                <div class="text-center weather-icon-sm">
+                  <span class="current-day-5">Fri</span> 🌞
+                  <span id="current-temp-5">8°C</span>
+                </div>
+              </div>
             </div>
           </div>
         </div>

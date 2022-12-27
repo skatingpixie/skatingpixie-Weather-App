@@ -52,21 +52,51 @@ img {
   max-width: 90%;
   margin: 0 auto;
   padding-block: 20px;
+  font-family: "Red Hat Display", sans-serif;
+  font-size: 1rem;
 }
+.city-search-form {
+  display: block;
+  margin: 0 auto;
+  text-align: center;
+  border: none;
+  padding: 10px;
+}
+
+.current-temp {
+  font-size: 24px;
+}
+.weather-img {
+  background-color: #ffa4ae;
+  height: 100px;
+  margin: 10px 0px;
+}
+
+.skating-weather-text {
+  text-align: center;
+  padding: 10px;
+}
+
+.weather-icon {
+  font-size: 40px;
+}
+.weather-icon-sm {
+  font-size: 24px;
+  padding: 8px;
+}
+
 .border {
   border: var(--bs-border-width) var(--bs-border-style) #ffa4ae !important;
 }
 button {
-  display: block;
-  margin: 2em auto;
+  margin: 0 auto;
   font-family: "Red Hat Display", sans-serif;
-  font-size: 1.2rem;
+  font-size: 1rem;
   background: #ffa4ae;
   color: black;
   border: none;
   border-radius: 0.25rem;
-  box-shadow: 2px 2px;
-  padding: 1em 2em;
+  padding: 4px 10px;
   transition: all 200ms ease-in-out;
 }
 button:hover {
