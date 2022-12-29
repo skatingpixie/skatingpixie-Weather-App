@@ -85,6 +85,18 @@ img {
   padding: 8px;
 }
 
+ul {
+  font-size: 18px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  max-height: 10px;
+}
+li {
+  text-align: right;
+  transform: translate(0px, -40px);
+}
+
 .border {
   border: var(--bs-border-width) var(--bs-border-style) #ffa4ae !important;
 }
