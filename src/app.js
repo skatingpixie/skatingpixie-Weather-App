@@ -2,6 +2,17 @@
 function temp(response) {
   let temperature = Math.round(response.data.main.temp);
   let geoTemp = document.querySelector("#temp-live");
+
+  let desc = document.querySelector("#skating-text");
+  let weatherDesc = response.data.weather[0].main;
+  desc.innerHTML = `Weather is currently: ${weatherDesc}`;
+
+  let icon = document.querySelector("#weather-icon");
+  let weatherIcon = response.data.weather[0].icon;
+  icon.setAttribute(
+    "src",
+    `http://openweathermap.org/img/wn/${weatherIcon}@2x.png`
+  );
   geoTemp.innerHTML = `${temperature}°C in `;
   let city = response.data.name;
   let country = response.data.sys.country;
@@ -20,6 +31,18 @@ navigator.geolocation.getCurrentPosition(showPosition);
 //get temperature from City search
 function showTemp(response) {
   let temperature = Math.round(response.data.main.temp);
+
+  let desc = document.querySelector("#skating-text");
+  let weatherDesc = response.data.weather[0].main;
+  desc.innerHTML = `Weather is currently: ${weatherDesc}`;
+
+  let icon = document.querySelector("#weather-icon");
+  let weatherIcon = response.data.weather[0].icon;
+
+  icon.setAttribute(
+    "src",
+    `http://openweathermap.org/img/wn/${weatherIcon}@2x.png`
+  );
   document.querySelector("#temp-live").innerHTML = `${temperature}°C in `;
 }
 
