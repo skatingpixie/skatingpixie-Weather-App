@@ -21,6 +21,7 @@
       integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65"
       crossorigin="anonymous"
     />
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <link rel="stylesheet" href="src/style.css" />
   </head>
   <body>
@@ -75,7 +76,7 @@
       <div class="container-fluid weatherAppContainer">
         <div class="row">
           <div class="col-sm-7 border border-2 rounded-3">
-            <form class="city-search-form" id="city-search-form">
+            <form class="city-search-form" id="search-form">
               <input type="text" placeholder="City" id="search-input" />
               <button type="submit" id="search-btn">Search</button>
             </form>
@@ -84,8 +85,8 @@
                 🌞
               </div>
               <div class="col-md">
-                <strong class="current-temp" id="current-temp">8°C</strong> in
-                Leominster, GB
+                <strong class="current-temp" id="temp-live">8°C</strong>
+                <span class="city" id="hero-city">Leominster, GB</span>
               </div>
             </div>
             <div class="weather-img"></div>
@@ -97,47 +98,57 @@
           <div class="col-sm-5">
             <div class="row">
               <div class="col-md-12 border border-2 rounded-3">
-                <div class="weather-icon-sm">
-                  🌞
+                <div class="day-wrapper">
                   <ul>
-                    <li><span class="current-day-1">Monday</span></li>
-                    <li><strong id="current-temp-1">8°C</strong></li>
+                    <li class="weather-icon-sm day-1-icon">🌞</li>
+                    <div class="data-align">
+                      <li><span class="current-day-1">Monday</span></li>
+                      <li><strong id="current-temp-1">8°C</strong></li>
+                    </div>
                   </ul>
                 </div>
               </div>
               <div class="col-md-12 border border-2 rounded-3">
-                <div class="weather-icon-sm">
-                  🌞
+                <div class="day-wrapper">
                   <ul>
-                    <li><span class="current-day-2">Tuesday</span></li>
-                    <li><strong id="current-temp-2">8°C</strong></li>
+                    <li class="weather-icon-sm day-2-icon">🌞</li>
+                    <div class="data-align">
+                      <li><span class="current-day-2">Tuesday</span></li>
+                      <li><strong id="current-temp-2">8°C</strong></li>
+                    </div>
                   </ul>
                 </div>
               </div>
               <div class="col-md-12 border border-2 rounded-3">
-                <div class="weather-icon-sm">
-                  🌞
+                <div class="day-wrapper">
                   <ul>
-                    <li><span class="current-day-3">Wednesday</span></li>
-                    <li><strong id="current-temp-3">8°C</strong></li>
+                    <li class="weather-icon-sm day-3-icon">🌞</li>
+                    <div class="data-align">
+                      <li><span class="current-day-3">Wednesday</span></li>
+                      <li><strong id="current-temp-3">8°C</strong></li>
+                    </div>
                   </ul>
                 </div>
               </div>
               <div class="col-md-12 border border-2 rounded-3">
-                <div class="weather-icon-sm">
-                  🌞
+                <div class="day-wrapper">
                   <ul>
-                    <li><span class="current-day-4">Thursday</span></li>
-                    <li><strong id="current-temp-4">8°C</strong></li>
+                    <li class="weather-icon-sm day-4-icon">🌞</li>
+                    <div class="data-align">
+                      <li><span class="current-day-4">Thursday</span></li>
+                      <li><strong id="current-temp-4">8°C</strong></li>
+                    </div>
                   </ul>
                 </div>
               </div>
               <div class="col-md-12 border border-2 rounded-3">
-                <div class="weather-icon-sm">
-                  🌞
+                <div class="day-wrapper">
                   <ul>
-                    <li><span class="current-day-5">Fri</span></li>
-                    <li><strong id="current-temp-5">8°C</strong></li>
+                    <li class="weather-icon-sm day-5-icon">🌞</li>
+                    <div class="data-align">
+                      <li><span class="current-day-5">Friday</span></li>
+                      <li><strong id="current-temp-5">8°C</strong></li>
+                    </div>
                   </ul>
                 </div>
               </div>

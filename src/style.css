@@ -55,6 +55,10 @@ img {
   font-family: "Red Hat Display", sans-serif;
   font-size: 1rem;
 }
+
+.city {
+  text-transform: capitalize;
+}
 .city-search-form {
   display: block;
   margin: 0 auto;
@@ -80,21 +84,27 @@ img {
 .weather-icon {
   font-size: 40px;
 }
+
 .weather-icon-sm {
-  font-size: 24px;
-  padding: 8px;
+  font-size: 30px;
+  text-align: left;
 }
 
-ul {
-  font-size: 18px;
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  max-height: 10px;
-}
-li {
+.day-wrapper {
+  margin: 10px, 5px;
+  padding: 8px;
   text-align: right;
-  transform: translate(0px, -40px);
+}
+
+.day-wrapper ul {
+  font-size: 18px;
+  padding: 0;
+  list-style: none;
+  max-height: 30px;
+}
+
+.data-align {
+  transform: translateY(-48px);
 }
 
 .border {
