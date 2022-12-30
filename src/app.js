@@ -30,6 +30,22 @@ let weatherDescriptionArray = [
   "cloudy",
 ];
 
+let imgSrc = [
+  "thunderstorm.png",
+  "drizzle.png",
+  "rain.png",
+  "snow.png",
+  "mist.png",
+  "smoke.png",
+  "haze.png",
+  "dust.png",
+  "ash.png",
+  "squall.png",
+  "tornado.png",
+  "clear.png",
+  "clouds.png",
+];
+
 //current temperature, description, city & weather icon
 function temp(response) {
   let temperature = Math.round(response.data.main.temp);
@@ -48,6 +64,11 @@ function temp(response) {
     "src",
     `http://openweathermap.org/img/wn/${weatherIcon}@2x.png`
   );
+
+  let weatherHeroImg = document.querySelector("#weather-hero-img");
+  weatherHeroImg.setAttribute =
+    ("src", `/src/images/weather-app/weather-hero-img/${imgSrc[index]}`);
+
   geoTemp.innerHTML = `${temperature}°C in `;
   let city = response.data.name;
   let country = response.data.sys.country;
@@ -79,11 +100,15 @@ function showTemp(response) {
 
   let icon = document.querySelector("#weather-icon");
   let weatherIcon = response.data.weather[0].icon;
-
   icon.setAttribute(
     "src",
     `http://openweathermap.org/img/wn/${weatherIcon}@2x.png`
   );
+
+  let weatherHeroImg = document.querySelector("#weather-hero-img");
+  weatherHeroImg.setAttribute =
+    ("src", `/src/images/weather-app/weather-hero-img/${imgSrc[index]}`);
+
   document.querySelector("#temp-live").innerHTML = `${temperature}°C in `;
   desc.innerHTML = `It is currently ${weatherDescriptionArray[index]} in ${city}.`;
 }

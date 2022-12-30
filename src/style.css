@@ -71,9 +71,10 @@ img {
   font-size: 24px;
 }
 .weather-img {
+  margin: 10px auto;
+  display: flex;
   background-color: #ffa4ae;
-  height: 100px;
-  margin: 10px 0px;
+  max-width: 40%;
 }
 
 .skating-weather-text {
