@@ -31,32 +31,33 @@ let weatherDescriptionArray = [
 ];
 
 let imgSrc = [
-  "thunderstorm.png",
-  "drizzle.png",
-  "rain.png",
-  "snow.png",
-  "mist.png",
-  "smoke.png",
-  "haze.png",
-  "dust.png",
-  "ash.png",
-  "squall.png",
-  "tornado.png",
-  "clear.png",
-  "clouds.png",
+  "/src/images/weather-app/weather-hero-img/thunderstorm.png",
+  "/src/images/weather-app/weather-hero-img/drizzle.png",
+  "/src/images/weather-app/weather-hero-img/rain.png",
+  "/src/images/weather-app/weather-hero-img/snow.png",
+  "/src/images/weather-app/weather-hero-img/mist.png",
+  "/src/images/weather-app/weather-hero-img/smoke.png",
+  "/src/images/weather-app/weather-hero-img/haze.png",
+  "/src/images/weather-app/weather-hero-img/dust.png",
+  "/src/images/weather-app/weather-hero-img/ash.png",
+  "/src/images/weather-app/weather-hero-img/squall.png",
+  "/src/images/weather-app/weather-hero-img/tornado.png",
+  "/src/images/weather-app/weather-hero-img/clear.png",
+  "/src/images/weather-app/weather-hero-img/clouds.png",
 ];
 
 //current temperature, description, city & weather icon
 function temp(response) {
+  function arrayMatch(value) {
+    return value === weatherDesc;
+  }
+
   let temperature = Math.round(response.data.main.temp);
   let geoTemp = document.querySelector("#temp-live");
 
   let desc = document.querySelector("#skating-text");
   let weatherDesc = response.data.weather[0].main;
   let index = weatherDescription.findIndex(arrayMatch);
-  function arrayMatch(value) {
-    return value === weatherDesc;
-  }
 
   let icon = document.querySelector("#weather-icon");
   let weatherIcon = response.data.weather[0].icon;
@@ -65,10 +66,8 @@ function temp(response) {
     `http://openweathermap.org/img/wn/${weatherIcon}@2x.png`
   );
 
-  let weatherHeroImg = document.querySelector("#weather-hero-img");
-  weatherHeroImg.setAttribute =
-    ("src",
-    `https://skatingpixie.com/src/images/weather-app/weather-hero-img/${imgSrc[index]}`);
+  let weatherImg = document.querySelector("#weather-hero-img");
+  weatherImg.setAttribute("src", `${imgSrc[index]}`);
 
   geoTemp.innerHTML = `${temperature}°C in `;
   let city = response.data.name;
@@ -89,15 +88,16 @@ navigator.geolocation.getCurrentPosition(showPosition);
 
 //get temperature from City search
 function showTemp(response) {
+  function arrayMatch(value) {
+    return value === weatherDesc;
+  }
+
   let temperature = Math.round(response.data.main.temp);
   let city = response.data.name;
 
   let desc = document.querySelector("#skating-text");
   let weatherDesc = response.data.weather[0].main;
   let index = weatherDescription.findIndex(arrayMatch);
-  function arrayMatch(value) {
-    return value === weatherDesc;
-  }
 
   let icon = document.querySelector("#weather-icon");
   let weatherIcon = response.data.weather[0].icon;
@@ -106,10 +106,8 @@ function showTemp(response) {
     `http://openweathermap.org/img/wn/${weatherIcon}@2x.png`
   );
 
-  let weatherHeroImg = document.querySelector("#weather-hero-img");
-  weatherHeroImg.setAttribute =
-    ("src",
-    `https://skatingpixie.com/src/images/weather-app/weather-hero-img/${imgSrc[index]}`);
+  let weatherImg = document.querySelector("#weather-hero-img");
+  weatherImg.setAttribute("src", `${imgSrc[index]}`);
 
   document.querySelector("#temp-live").innerHTML = `${temperature}°C in `;
   desc.innerHTML = `It is currently ${weatherDescriptionArray[index]} in ${city}.`;
