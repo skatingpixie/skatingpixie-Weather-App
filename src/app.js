@@ -67,7 +67,8 @@ function temp(response) {
 
   let weatherHeroImg = document.querySelector("#weather-hero-img");
   weatherHeroImg.setAttribute =
-    ("src", `/src/images/weather-app/weather-hero-img/${imgSrc[index]}`);
+    ("src",
+    `https://skatingpixie.com/src/images/weather-app/weather-hero-img/${imgSrc[index]}`);
 
   geoTemp.innerHTML = `${temperature}°C in `;
   let city = response.data.name;
@@ -107,7 +108,8 @@ function showTemp(response) {
 
   let weatherHeroImg = document.querySelector("#weather-hero-img");
   weatherHeroImg.setAttribute =
-    ("src", `/src/images/weather-app/weather-hero-img/${imgSrc[index]}`);
+    ("src",
+    `https://skatingpixie.com/src/images/weather-app/weather-hero-img/${imgSrc[index]}`);
 
   document.querySelector("#temp-live").innerHTML = `${temperature}°C in `;
   desc.innerHTML = `It is currently ${weatherDescriptionArray[index]} in ${city}.`;
