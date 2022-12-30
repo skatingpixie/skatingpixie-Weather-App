@@ -1,11 +1,46 @@
-//current temperature and city
+let weatherDescription = [
+  "Thunderstorm",
+  "Drizzle",
+  "Rain",
+  "Snow",
+  "Mist",
+  "Smoke",
+  "Haze",
+  "Dust",
+  "Ash",
+  "Squall",
+  "Tornado",
+  "clear",
+  "Clouds",
+];
+
+let weatherDescriptionArray = [
+  "thunderstorming",
+  "drizzling",
+  "raining",
+  "snowing",
+  "misty",
+  "smoky",
+  "hazy",
+  "dusty",
+  "ashy",
+  "squalling",
+  "tornadoes",
+  "clear",
+  "cloudy",
+];
+
+//current temperature, description, city & weather icon
 function temp(response) {
   let temperature = Math.round(response.data.main.temp);
   let geoTemp = document.querySelector("#temp-live");
 
   let desc = document.querySelector("#skating-text");
   let weatherDesc = response.data.weather[0].main;
-  desc.innerHTML = `Weather is currently: ${weatherDesc}`;
+  let index = weatherDescription.findIndex(arrayMatch);
+  function arrayMatch(value) {
+    return value === weatherDesc;
+  }
 
   let icon = document.querySelector("#weather-icon");
   let weatherIcon = response.data.weather[0].icon;
@@ -18,7 +53,9 @@ function temp(response) {
   let country = response.data.sys.country;
   let geoCity = document.querySelector("#hero-city");
   geoCity.innerHTML = `${city}, ${country}`;
+  desc.innerHTML = `It is currently ${weatherDescriptionArray[index]} in ${city}.`;
 }
+
 function showPosition(position) {
   let lat = position.coords.latitude;
   let lon = position.coords.longitude;
@@ -31,10 +68,14 @@ navigator.geolocation.getCurrentPosition(showPosition);
 //get temperature from City search
 function showTemp(response) {
   let temperature = Math.round(response.data.main.temp);
+  let city = response.data.name;
 
   let desc = document.querySelector("#skating-text");
   let weatherDesc = response.data.weather[0].main;
-  desc.innerHTML = `Weather is currently: ${weatherDesc}`;
+  let index = weatherDescription.findIndex(arrayMatch);
+  function arrayMatch(value) {
+    return value === weatherDesc;
+  }
 
   let icon = document.querySelector("#weather-icon");
   let weatherIcon = response.data.weather[0].icon;
@@ -44,6 +85,7 @@ function showTemp(response) {
     `http://openweathermap.org/img/wn/${weatherIcon}@2x.png`
   );
   document.querySelector("#temp-live").innerHTML = `${temperature}°C in `;
+  desc.innerHTML = `It is currently ${weatherDescriptionArray[index]} in ${city}.`;
 }
 
 //search engine function
