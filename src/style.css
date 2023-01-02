@@ -39,6 +39,7 @@ img {
   display: block;
   margin: 0 auto;
 }
+
 .headerLogo {
   max-width: 80%;
   max-height: 65px;
@@ -71,10 +72,8 @@ img {
   font-size: 24px;
 }
 .weather-img {
-  margin: 10px auto;
-  display: flex;
-  background-color: #ffa4ae;
-  max-width: 40%;
+  margin: 0px auto;
+  max-height: 120px;
 }
 
 .skating-weather-text {

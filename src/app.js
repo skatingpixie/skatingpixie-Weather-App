@@ -10,7 +10,7 @@ let weatherDescription = [
   "Ash",
   "Squall",
   "Tornado",
-  "clear",
+  "Clear",
   "Clouds",
 ];
 
@@ -52,9 +52,10 @@ function temp(response) {
     return value === weatherDesc;
   }
 
-  let temperature = Math.round(response.data.main.temp);
-  let geoTemp = document.querySelector("#temp-live");
+  celsiusTempLocal = Math.round(response.data.main.temp);
 
+  let geoTemp = document.querySelector("#temp-live");
+  geoTemp.innerHTML = `${celsiusTempLocal}°C in `;
   let desc = document.querySelector("#skating-text");
   let weatherDesc = response.data.weather[0].main;
   let index = weatherDescription.findIndex(arrayMatch);
@@ -69,17 +70,18 @@ function temp(response) {
   let weatherImg = document.querySelector("#weather-hero-img");
   weatherImg.setAttribute("src", `${imgSrc[index]}`);
 
-  geoTemp.innerHTML = `${temperature}°C in `;
   let city = response.data.name;
   let country = response.data.sys.country;
   let geoCity = document.querySelector("#hero-city");
   geoCity.innerHTML = `${city}, ${country}`;
-  desc.innerHTML = `It is currently ${weatherDescriptionArray[index]} in ${city}.`;
+
+  desc.innerHTML = `It is currently ${weatherDescriptionArray[index]} in ${city}, ${country}.`;
 }
 
 function showPosition(position) {
   let lat = position.coords.latitude;
   let lon = position.coords.longitude;
+
   let apiKey = "7d048e6e84d3235680d2c650732b34fb";
   let apiUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${apiKey}&units=metric`;
   axios.get(apiUrl).then(temp);
@@ -92,8 +94,10 @@ function showTemp(response) {
     return value === weatherDesc;
   }
 
-  let temperature = Math.round(response.data.main.temp);
+  temperature = Math.round(response.data.main.temp);
+
   let city = response.data.name;
+  let country = response.data.sys.country;
 
   let desc = document.querySelector("#skating-text");
   let weatherDesc = response.data.weather[0].main;
@@ -110,7 +114,7 @@ function showTemp(response) {
   weatherImg.setAttribute("src", `${imgSrc[index]}`);
 
   document.querySelector("#temp-live").innerHTML = `${temperature}°C in `;
-  desc.innerHTML = `It is currently ${weatherDescriptionArray[index]} in ${city}.`;
+  desc.innerHTML = `It is currently ${weatherDescriptionArray[index]} in ${city}, ${country}.`;
 }
 
 //search engine function
@@ -118,12 +122,16 @@ function submitSearch(event) {
   event.preventDefault();
   let input = document.querySelector("#search-input");
   let city = input.value;
+
   let citySearch = document.querySelector("#hero-city");
   citySearch.innerHTML = `${city}`;
+
   apiKey = "7d048e6e84d3235680d2c650732b34fb";
   let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
   axios.get(apiUrl).then(showTemp);
 }
+
+let celsiusTemp = null;
 
 let search = document.querySelector("#search-form");
 search.addEventListener("submit", submitSearch);
