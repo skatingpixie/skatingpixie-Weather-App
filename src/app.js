@@ -88,6 +88,42 @@ function showPosition(position) {
 }
 navigator.geolocation.getCurrentPosition(showPosition);
 
+//5 day weather forecast
+function weatherForecast() {
+  console.log(response.data);
+  let forecast = document.querySelector("#weather-forecast");
+  let forecastHTML = `<div class="row">`;
+
+  let days = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"];
+  days.forEach(function (day) {
+    forecastHTML =
+      forecastHTML +
+      `
+  <div class="col-md-12 border border-2 rounded-3">
+    <div class="day-wrapper">
+      <ul>
+        <li class="weather-icon-sm forecast-icon">🌞</li>
+        <div class="data-align">
+          <li><span class="forecast-day">${day}</span></li>
+          <li><strong id="forecast-temp">8°C</strong></li>
+        </div>
+      </ul>
+    </div>
+  </div>
+`;
+  });
+
+  forecastHTML = forecastHTML + `</div>`;
+  forecast.innerHTML = forecastHTML;
+}
+
+function getForecast(coordinates) {
+  let apiKey = "7d048e6e84d3235680d2c650732b34fb";
+  let apiUrl = `https://api.openweathermap.org/data/3.0/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${apiKey}&units=metric`;
+  console.log(apiUrl);
+  axios.get(apiUrl).then(weatherForecast);
+}
+
 //get temperature from City search
 function showTemp(response) {
   function arrayMatch(value) {
@@ -115,6 +151,8 @@ function showTemp(response) {
 
   document.querySelector("#temp-live").innerHTML = `${temperature}°C in `;
   desc.innerHTML = `It is currently ${weatherDescriptionArray[index]} in ${city}, ${country}.`;
+
+  getForecast(response.data.coord);
 }
 
 //search engine function
@@ -126,7 +164,7 @@ function submitSearch(event) {
   let citySearch = document.querySelector("#hero-city");
   citySearch.innerHTML = `${city}`;
 
-  apiKey = "7d048e6e84d3235680d2c650732b34fb";
+  let apiKey = "7d048e6e84d3235680d2c650732b34fb";
   let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
   axios.get(apiUrl).then(showTemp);
 }
