@@ -48,7 +48,8 @@ p {
   max-width: 40%;
 }
 .weatherAppContainer {
-  max-width: 90%;
+  max-width: 80%;
+  display: block;
   margin: 0 auto;
   padding-block: 20px;
   font-family: "Red Hat Display", sans-serif;
@@ -94,7 +95,7 @@ p {
 
 .day-wrapper {
   margin: 10px, 5px;
-  padding: 8px;
+  padding: 8px 25px;
   text-align: right;
 }
 
@@ -106,7 +107,8 @@ p {
 }
 
 .data-align {
-  transform: translateY(-48px);
+  transform: translate3d(77px, -51px, 0px);
+  text-align: left;
 }
 
 .border {

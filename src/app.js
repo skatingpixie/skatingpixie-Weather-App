@@ -112,14 +112,14 @@ navigator.geolocation.getCurrentPosition(showPosition);
 function weatherForecast(response) {
   let forecastData = response.data.daily;
   let forecast = document.querySelector("#weather-forecast");
-  let forecastHTML = `<div class="row">`;
+  let forecastHTML = `<div class="row g-2">`;
 
   forecastData.forEach(function (forecastDay, index) {
     if (index < 5) {
       forecastHTML =
         forecastHTML +
         `
-  <div class="col-md-12 border border-2 rounded-3 p-1">
+  <div class="col-md-12 border border-2 rounded-3">
     <div class="day-wrapper">
       <ul>
         <li class="weather-icon-sm forecast-icon"><img src="http://openweathermap.org/img/wn/${
