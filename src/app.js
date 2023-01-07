@@ -119,7 +119,7 @@ function weatherForecast(response) {
       forecastHTML =
         forecastHTML +
         `
-  <div class="col-md-12 border border-2 rounded-3">
+  <div class="col-md-12 border border-2 rounded-3 p-1">
     <div class="day-wrapper">
       <ul>
         <li class="weather-icon-sm forecast-icon"><img src="http://openweathermap.org/img/wn/${
