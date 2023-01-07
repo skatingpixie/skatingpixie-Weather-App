@@ -8,6 +8,13 @@ nav {
   background-color: #7e4d9e;
   color: #fff;
 }
+.navbar-logo {
+  display: block;
+  margin: 0 auto;
+}
+.navbar-brand {
+  margin: 0;
+}
 body {
   background: linear-gradient(#ffa4ae, #7e4d9e);
 }
@@ -16,7 +23,6 @@ h1 {
   text-align: center;
   font-family: "DynaPuff", cursive;
   font-weight: 200;
-  font-size: 2rem;
   color: #7e4d9e;
 }
 h2 {
