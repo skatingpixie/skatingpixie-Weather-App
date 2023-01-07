@@ -26,7 +26,7 @@
   </head>
   <body>
     <nav class="navbar navbar-expand-md">
-      <div class="container-fluid">
+      <div class="container-fluid justify-content-center">
         <a class="navbar-brand" href="#"
           ><img
             class="navbar-logo"
@@ -80,11 +80,13 @@
               <input type="text" placeholder="City" id="search-input" />
               <button type="submit" id="search-btn">Search</button>
             </form>
-            <div class="current-temp row align-items-center">
-              <div class="col-md-3 text-center weather-icon">
+            <div
+              class="d-flex justify-content-center current-temp row align-items-center"
+            >
+              <div class="col-md-auto text-center weather-icon">
                 <img src="#" alt="weather-icon" id="weather-icon" />
               </div>
-              <div class="col-md">
+              <div class="col-md-auto text-center">
                 <strong class="current-temp" id="temp-live">8°C</strong>
                 <span class="city" id="hero-city">Leominster, GB</span>
               </div>
@@ -118,7 +120,7 @@
         <em>(safety first, folks!)</em>
       </p>
       <p>Come on, jump on your long-board and join our mailing list below!</p>
-
+      <hr />
       <p class="footer">
         Website coded by
         <a
@@ -127,6 +129,7 @@
           target="_blank"
           >Charlotte Millward</a
         >
+        <br />
         <img
           class="footerLogo"
           src="src/images/long-logo.png"

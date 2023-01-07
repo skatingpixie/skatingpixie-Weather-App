@@ -71,7 +71,7 @@ p {
 }
 .weather-img {
   display: block;
-  margin: 0px auto;
+  margin: 20px auto;
   max-height: 120px;
 }
 
@@ -86,6 +86,10 @@ p {
 
 .weather-icon-sm {
   text-align: left;
+}
+
+.current-wrapper {
+  align-content: center;
 }
 
 .day-wrapper {
@@ -136,11 +140,12 @@ button:hover {
 }
 .footer {
   text-align: center;
+  margin-top: 20px;
 }
 .footerLogo {
-  display: block;
-  margin: 10px auto;
-  max-height: 2em;
+  max-width: 100%;
+  max-height: 50px;
+  margin: 10px 0px;
 }
 .hyperLink {
   color: #7e4d9e;
