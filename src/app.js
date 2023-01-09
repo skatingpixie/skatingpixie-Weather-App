@@ -7,6 +7,8 @@ let weatherDescription = [
   "Smoke",
   "Haze",
   "Dust",
+  "Fog",
+  "Sand",
   "Ash",
   "Squall",
   "Tornado",
@@ -23,6 +25,8 @@ let weatherDescriptionArray = [
   "smoky",
   "hazy",
   "dusty",
+  "foggy",
+  "sandy",
   "ashy",
   "squalling",
   "tornadoes",
@@ -39,11 +43,31 @@ let imgSrc = [
   "/src/images/weather-app/weather-hero-img/smoke.png",
   "/src/images/weather-app/weather-hero-img/haze.png",
   "/src/images/weather-app/weather-hero-img/dust.png",
+  "/src/images/weather-app/weather-hero-img/dust.png",
+  "/src/images/weather-app/weather-hero-img/dust.png",
   "/src/images/weather-app/weather-hero-img/ash.png",
   "/src/images/weather-app/weather-hero-img/squall.png",
   "/src/images/weather-app/weather-hero-img/tornado.png",
   "/src/images/weather-app/weather-hero-img/clear.png",
   "/src/images/weather-app/weather-hero-img/clouds.png",
+];
+
+let iconImg = [
+  '<i class="fa-solid fa-cloud-bolt"></i>',
+  '<i class="fa-solid fa-cloud-showers-heavy"></i>',
+  '<i class="fa-solid fa-cloud-showers-heavy"></i>',
+  '<i class="fa-solid fa-snowflake"></i>',
+  '<i class="fa-solid fa-smog"></i>',
+  '<i class="fa-solid fa-smog"></i>',
+  '<i class="fa-solid fa-smog"></i>',
+  '<i class="fa-solid fa-smog"></i>',
+  '<i class="fa-solid fa-smog"></i>',
+  '<i class="fa-solid fa-smog"></i>',
+  '<i class="fa-solid fa-smog"></i>',
+  '<i class="fa-solid fa-smog"></i>',
+  '<i class="fa-solid fa-tornado"></i>',
+  '<i class="fa-solid fa-sun"></i>',
+  '<i class="fa-solid fa-cloud"></i>',
 ];
 
 //formatting day
@@ -76,6 +100,7 @@ function temp(response) {
   let geoTemp = document.querySelector("#temp-live");
   geoTemp.innerHTML = `${celsiusTempLocal}°C in `;
   let desc = document.querySelector("#skating-text");
+
   let weatherDesc = response.data.weather[0].main;
   let index = weatherDescription.findIndex(arrayMatch);
 

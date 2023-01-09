@@ -54,7 +54,7 @@ p {
   max-width: 40%;
 }
 .weatherAppContainer {
-  max-width: 80%;
+  max-width: 610px;
   display: block;
   margin: 0 auto;
   padding-block: 20px;
@@ -78,8 +78,8 @@ p {
 }
 .weather-img {
   display: block;
-  margin: 20px auto;
-  max-height: 120px;
+  margin: 5px auto;
+  max-height: 115px;
 }
 
 .skating-weather-text {
@@ -162,4 +162,52 @@ button:hover {
 .hyperLink:hover {
   color: #7e4d9e;
   text-decoration: underline;
+}
+
+@media (max-width: 768px) {
+  .weather-icon {
+    transform: scale(0.8);
+    max-width: 120px;
+  }
+  .current-temp {
+    font-size: 20px;
+  }
+  .col-md-auto {
+    flex: 0;
+    width: auto;
+  }
+  .data-align {
+    transform: translate3d(52px, -51px, 0px);
+    text-align: left;
+  }
+
+  .weather-img {
+    display: block;
+    margin: 10px auto;
+    max-height: 115px;
+  }
+}
+
+@media (max-width: 280px) {
+  .weatherAppContainer {
+    max-width: 60%;
+    display: block;
+    margin: 0 auto;
+    padding-block: 20px;
+    font-family: "Red Hat Display", sans-serif;
+    font-size: 1rem;
+  }
+  .weather-img {
+    display: block;
+    margin: 10px auto;
+    max-height: 85px;
+  }
+
+  .h1,
+  h1 {
+    font-size: calc(1.3rem);
+  }
+  .navbar-logo {
+    transform: scale(0.7);
+  }
 }
