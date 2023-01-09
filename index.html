@@ -79,17 +79,20 @@
       <div
         class="d-flex container-sm justify-content-center weatherAppContainer"
       >
-        <div class="row g-2 g-lg-4">
+        <div class="row g-3 g-lg-4">
           <div class="col-sm-7 border border-2 rounded-3">
             <form class="city-search-form" id="search-form">
               <input type="text" placeholder="City" id="search-input" />
               <button type="submit" id="search-btn">Search</button>
             </form>
             <div
-              class="d-flex justify-content-center current-temp row align-items-center"
+              class="d-flex justify-content-center current-temp row g-3 align-items-center"
             >
-              <div class="col-md-auto text-center weather-icon">
-                <img src="#" alt="weather-icon" id="weather-icon" />
+              <div
+                class="col-md-auto text-center weather-icon"
+                id="weather-icon"
+              >
+                weathericon
               </div>
               <div class="col-md-auto text-center current-temp">
                 <strong id="temp-live">8°C</strong>

@@ -88,11 +88,15 @@ p {
 }
 
 .weather-icon {
-  font-size: 40px;
+  color: #ffa4ae;
+  font-size: 60px;
+  padding: 20px, 0px;
 }
 
-.weather-icon-sm {
+.forecast-icon {
   text-align: left;
+  font-size: 28px;
+  color: #7e4d9e;
 }
 
 .current-wrapper {
@@ -113,7 +117,7 @@ p {
 }
 
 .data-align {
-  transform: translate3d(77px, -51px, 0px);
+  transform: translate3d(78px, -46px, 0px);
   text-align: left;
 }
 
@@ -165,10 +169,6 @@ button:hover {
 }
 
 @media (max-width: 768px) {
-  .weather-icon {
-    transform: scale(0.8);
-    max-width: 120px;
-  }
   .current-temp {
     font-size: 20px;
   }
@@ -177,8 +177,8 @@ button:hover {
     width: auto;
   }
   .data-align {
-    transform: translate3d(52px, -51px, 0px);
-    text-align: left;
+    transform: translate3d(15px, -46px, 0px);
+    text-align: center;
   }
 
   .weather-img {

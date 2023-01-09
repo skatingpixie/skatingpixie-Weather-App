@@ -89,6 +89,8 @@ function formatDay(dt) {
   return day;
 }
 
+//array matching tool for weather icons
+
 //current temperature, description, city & weather icon
 function temp(response) {
   function arrayMatch(value) {
@@ -105,11 +107,7 @@ function temp(response) {
   let index = weatherDescription.findIndex(arrayMatch);
 
   let icon = document.querySelector("#weather-icon");
-  let weatherIcon = response.data.weather[0].icon;
-  icon.setAttribute(
-    "src",
-    `http://openweathermap.org/img/wn/${weatherIcon}@2x.png`
-  );
+  icon.innerHTML = `${iconImg[index]}`;
 
   let weatherImg = document.querySelector("#weather-hero-img");
   weatherImg.setAttribute("src", `${imgSrc[index]}`);
@@ -120,6 +118,7 @@ function temp(response) {
   geoCity.innerHTML = `${city}, ${country}`;
 
   desc.innerHTML = `It is currently ${weatherDescriptionArray[index]} in ${city}, ${country}.`;
+
   getForecast(response.data.coord);
 }
 
@@ -140,16 +139,20 @@ function weatherForecast(response) {
   let forecastHTML = `<div class="row g-2">`;
 
   forecastData.forEach(function (forecastDay, index) {
+    function arrayMatch(value) {
+      return value === forecastDay.weather[0].main;
+    }
+
+    let iconIndex = weatherDescription.findIndex(arrayMatch);
+
     if (index < 5) {
       forecastHTML =
         forecastHTML +
         `
   <div class="col-md-12 border border-2 rounded-3">
-    <div class="day-wrapper">
+    <div class="text-center day-wrapper">
       <ul>
-        <li class="weather-icon-sm forecast-icon"><img src="http://openweathermap.org/img/wn/${
-          forecastDay.weather[0].icon
-        }@2x.png" alt="daily-weather-icon" height=46px/></li>
+        <li class="forecast-icon"><div>${iconImg[iconIndex]}</div></li>
         <div class="data-align">
           <li><span class="forecast-day">${formatDay(
             forecastDay.dt
